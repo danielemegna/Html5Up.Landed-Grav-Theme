@@ -1,0 +1,21 @@
+<!-- One -->
+  <section id="one" class="spotlight style1 bottom">
+    <span class="image fit main"><img src="{{ page.media['pic02.jpg'].url }}" alt="" /></span>
+    <div class="content">
+      <div class="container">
+        <div class="row">
+          <div class="4u 12u$(medium)">
+            <header>
+              {{ content }}
+            </header>
+          </div>
+          {% for section in page.header.sections %}
+          <div class="4u 12u$(medium)">
+            <p>{{ section }}</p>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    <a href="#two" class="goto-next scrolly">Next</a>
+  </section>

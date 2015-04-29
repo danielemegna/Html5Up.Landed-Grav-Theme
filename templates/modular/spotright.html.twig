@@ -1,0 +1,19 @@
+<!-- Two -->
+  <section id="two" class="spotlight style2 right">
+    <span class="image fit main"><img src="{{ page.media['pic03.jpg'].url }}" alt="" /></span>
+    <div class="content">
+      <header>
+        <h2>{{ header.title }}</h2>
+        <p>{{ header.subtitle }}</p>
+      </header>
+      <p>{{ content }}</p>
+      {% if header.buttons %}
+      <ul class="actions">
+        {% for button in header.buttons %}
+        <li><a href="#" class="button">{{ button }}</a></li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </div>
+    <a href="#three" class="goto-next scrolly">Next</a>
+  </section>
