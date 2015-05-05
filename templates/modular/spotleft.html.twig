@@ -1,0 +1,19 @@
+<!-- Three -->
+  <section id="three" class="spotlight style3 left">
+    <span class="image fit main bottom"><img src="{{ page.media['pic04.jpg'].url }}" alt="" /></span>
+    <div class="content">
+      <header>
+        <h2>{{ header.title }}</h2>
+        <p>{{ header.subtitle }}</p>
+      </header>
+      <p>{{ content }}</p>
+      {% if header.buttons %}
+      <ul class="actions">
+        {% for button in header.buttons %}
+        <li><a href="#" class="button">{{ button }}</a></li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </div>
+    <a href="#four" class="goto-next scrolly">Next</a>
+  </section>

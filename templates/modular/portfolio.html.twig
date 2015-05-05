@@ -1,0 +1,29 @@
+<!-- Four -->
+  <section id="four" class="wrapper style1 special fade-up">
+    <div class="container">
+      <header class="major">
+        <h2>{{ page.header.title }}</h2>
+        {{ content }}
+      </header>
+      <div class="box alt">
+        <div class="row uniform">
+          {% for section in page.header.sections %}
+          <section class="4u 6u(medium) 12u$(xsmall)">
+            <span class="icon alt major fa-{{ section.icon }}"></span>
+            <h3>{{ section.title }}</h3>
+            <p>{{ section.content }}</p>
+          </section>
+          {% endfor %}
+        </div>
+      </div>
+      {% if page.header.buttons %}
+      <footer class="major">
+        <ul class="actions">
+          {% for button in page.header.buttons %}
+          <li><a href="#" class="button">{{ button }}</a></li>
+          {% endfor %}
+        </ul>
+      </footer>
+      {% endif %}
+    </div>
+  </section>
