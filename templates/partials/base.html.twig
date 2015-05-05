@@ -35,8 +35,23 @@
         <h1 id="logo"><a href="index.html">Landed</a></h1>
         <nav id="nav">
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li>
+            {% for p in pages.children.visible %}
+              {% set current_page = (p.active or p.activeChild) ? 'active' : '' %}
+              <li class="{{ current_page }}">
+                <a href="{{ p.url }}">{{ p.menu }}</a>
+                {% if p.children.visible.count > 0 %}
+                  <ul>
+                    {% for p in pages.children.visible %}
+                      {% set current_page = (p.active or p.activeChild) ? 'active' : '' %}
+                      <li class="{{ current_page }}">
+                        <a href="{{ p.url }}">{{ p.menu }}</a>
+                      </li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+              </li>
+            {% endfor %}
+            <!--<li>
               <a href="">Layouts</a>
               <ul>
                 <li><a href="left-sidebar.html">Left Sidebar</a></li>
@@ -52,8 +67,7 @@
                   </ul>
                 </li>
               </ul>
-            </li>
-            <li><a href="elements.html">Elements</a></li>
+            </li>-->
             <li><a href="#" class="button special">Sign Up</a></li>
           </ul>
         </nav>
