@@ -1,0 +1,38 @@
+<nav id="nav">
+  <ul>
+    {% for p in pages.children.visible %}
+      {% set current_page = (p.active or p.activeChild) ? 'active' : '' %}
+      <li class="{{ current_page }}">
+        <a href="{{ p.url }}">{{ p.menu }}</a>
+        {% if p.children.visible.count > 0 %}
+          <ul>
+            {% for p in pages.children.visible %}
+              {% set current_page = (p.active or p.activeChild) ? 'active' : '' %}
+              <li class="{{ current_page }}">
+                <a href="{{ p.url }}">{{ p.menu }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </li>
+    {% endfor %}
+    <!--<li>
+      <a href="">Layouts</a>
+      <ul>
+        <li><a href="left-sidebar.html">Left Sidebar</a></li>
+        <li><a href="right-sidebar.html">Right Sidebar</a></li>
+        <li><a href="no-sidebar.html">No Sidebar</a></li>
+        <li>
+          <a href="">Submenu</a>
+          <ul>
+            <li><a href="#">Option 1</a></li>
+            <li><a href="#">Option 2</a></li>
+            <li><a href="#">Option 3</a></li>
+            <li><a href="#">Option 4</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>-->
+    <li><a href="#" class="button special">Sign Up</a></li>
+  </ul>
+</nav>

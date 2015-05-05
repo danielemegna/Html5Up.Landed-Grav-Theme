@@ -33,62 +33,12 @@
     <!-- Header -->
       <header id="header">
         <h1 id="logo"><a href="index.html">Landed</a></h1>
-        <nav id="nav">
-          <ul>
-            {% for p in pages.children.visible %}
-              {% set current_page = (p.active or p.activeChild) ? 'active' : '' %}
-              <li class="{{ current_page }}">
-                <a href="{{ p.url }}">{{ p.menu }}</a>
-                {% if p.children.visible.count > 0 %}
-                  <ul>
-                    {% for p in pages.children.visible %}
-                      {% set current_page = (p.active or p.activeChild) ? 'active' : '' %}
-                      <li class="{{ current_page }}">
-                        <a href="{{ p.url }}">{{ p.menu }}</a>
-                      </li>
-                    {% endfor %}
-                  </ul>
-                {% endif %}
-              </li>
-            {% endfor %}
-            <!--<li>
-              <a href="">Layouts</a>
-              <ul>
-                <li><a href="left-sidebar.html">Left Sidebar</a></li>
-                <li><a href="right-sidebar.html">Right Sidebar</a></li>
-                <li><a href="no-sidebar.html">No Sidebar</a></li>
-                <li>
-                  <a href="">Submenu</a>
-                  <ul>
-                    <li><a href="#">Option 1</a></li>
-                    <li><a href="#">Option 2</a></li>
-                    <li><a href="#">Option 3</a></li>
-                    <li><a href="#">Option 4</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </li>-->
-            <li><a href="#" class="button special">Sign Up</a></li>
-          </ul>
-        </nav>
+        {% include 'partials/navigation.html.twig' %}
       </header>
 
     {% block content %}{% endblock %}
 
-    <!-- Footer -->
-      <footer id="footer">
-        <ul class="icons">
-          <li><a href="#" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
-          <li><a href="#" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
-          <li><a href="#" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
-          <li><a href="#" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
-          <li><a href="#" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
-          <li><a href="#" class="icon alt fa-envelope"><span class="label">Email</span></a></li>
-        </ul>
-        <ul class="copyright">
-          <li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-        </ul>
-      </footer>
+    {% include 'partials/footer.html.twig' %}
 
   </body>
 </html>

@@ -1,0 +1,30 @@
+title: Grav
+author:
+  name: Joe Bloggs
+  email: 'joe@test.com'
+metadata:
+    description: 'Grav is an easy to use, yet powerful, open source flat-file CMS'
+
+social:
+  - label: Twitter
+    icon: twitter
+    link: http://twitter.com
+  - label: Facebook
+    icon: facebook
+    link: http://fb.com
+  - label: LinkedIn
+    icon: linkedin
+    link: http://linked.in
+  - label: Instagram
+    icon: instagram
+    link: http://instagr.am
+  - label: GitHub
+    icon: github
+    link: http://github.com
+  - label: Email
+    icon: envelope
+    link:
+
+footlink:
+  - 'Untitled. All rights reserved.'
+  - 'Design: <a href="http://html5up.net">HTML5 UP</a>'
